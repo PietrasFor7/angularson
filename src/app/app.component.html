@@ -1,0 +1,25 @@
+<h1>Lista</h1>
+<button type="button" (click)="show()">Show List</button>
+<table border="1px solid silver" *ngIf="table">
+  <th>Something to do</th>
+  <th>Zrobione?</th>
+  <th>Deadline</th>
+  <th>Edit</th>
+  <tr *ngFor="let rzecz of Rzeczy">
+    <td>{{rzecz.element}}</td>
+    <td><input type="checkbox"></td>
+    <td>{{rzecz.element2}}</td>
+    <td><button type="button" (click)="delete()">usun</button></td>
+  </tr>
+</table>
+<Button *ngIf="button2" type="button" name="button" (click)="show2()">Add</Button>
+<div *ngIf="formularz">
+  <form ngForm (ngSubmit)="wyswietl()" name="form">
+  <label for="im">Something to do</label>
+  <input type="text" name="imn" id="imn"[(ngModel)]="wpisane">
+  <br>
+  <label for="im">Deadline</label>
+  <input type="date" name="im" id="im"[(ngModel)]="wpisane2">
+  <button type="submit">Add</button>
+</form>
+</div>
